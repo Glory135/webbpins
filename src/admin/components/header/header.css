@@ -1,0 +1,22 @@
+.admin_header {
+  width: auto;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #c7c6c5;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.admin_header h2 {
+  font-weight: 200;
+}
+
+@media (max-width: 450px) {
+  .admin_header h2 {
+    font-size: 17px;
+  }
+}

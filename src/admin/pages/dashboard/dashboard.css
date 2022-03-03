@@ -1,0 +1,39 @@
+.admin_dashboard {
+  display: flex;
+}
+.admin_dashboard_container {
+  flex: 5;
+}
+.admin_dashboard_table_container {
+  height: 90vh;
+  width: 80vw;
+}
+
+.action_btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.action_btn:hover {
+  cursor: pointer;
+}
+.edit_btn {
+  background-color: #3bb077;
+}
+.delete_btn {
+  background-color: red;
+  margin-left: 50px;
+}
+.action {
+  width: 20px !important;
+  color: white;
+}
+@media (max-width: 450px) {
+  .admin_dashboard_container {
+    flex: 10;
+  }
+}

@@ -1,0 +1,73 @@
+.admin_login {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(20, 20, 22, 0.2),
+      rgba(40, 41, 43, 0.2)
+    ),
+    url(../../images/hero.jpeg);
+}
+.admin_form_container {
+  background-color: rgba(249, 249, 252, 0.329);
+  width: auto;
+  height: auto;
+  padding: 50px 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+.admin_form_container_2 {
+  width: auto;
+  height: auto;
+}
+.admin_form_label {
+  border-bottom: rgb(194, 189, 189) 2px solid;
+  padding: 5px;
+}
+.admin_form_label h2 {
+  color: var(--secondary);
+}
+.admin_login_form {
+  margin-top: 20px;
+}
+.admin_login_form input {
+  width: 300px;
+  height: 30px;
+  background-color: transparent;
+  border-top: 1px solid black;
+  margin-bottom: 20px;
+}
+.admin_login_form h3 {
+  font-weight: 200;
+}
+.cancelImg {
+  width: 30px;
+  margin-top: 10px;
+}
+.error_msg {
+  color: red;
+}
+
+@media (max-width: 450px) {
+  .admin_form_label h2 {
+    font-size: 17px;
+  }
+  .admin_login_form h3 {
+    font-size: 15px;
+  }
+  .admin_login_form input {
+    width: 200px;
+  }
+  .admin_form_container {
+    /* width: auto;
+  height: auto; */
+    padding: 20px 30px;
+  }
+}

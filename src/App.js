@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Admin from "./Admin";
+import Client from "./Client";
+import jwt_decode from "jwt-decode";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+toast.configure();
 function App() {
+  const [isAdmin, setIsAdmin] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // admin validation start
+    const tok = JSON.parse(localStorage.getItem("webbpins_admin_token"));
+    if (tok) {
+      const decoded_token = jwt_decode(tok);
+      const current_time = new Date().getTime();
+      if (decoded_token.exp * 1000 < current_time) {
+        localStorage.removeItem("webbpins_admin_token");
+      } else {
+        setIsAdmin(true);
+      }
+    }
+    // admin validation end
+  }, [isAdmin, setIsAdmin, navigate]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isAdmin ? (
+        <Admin setIsAdmin={setIsAdmin} isAdmin={isAdmin} />
+      ) : (
+        <Client setIsAdmin={setIsAdmin} isAdmin={isAdmin} />
+      )}
+    </>
   );
 }
 

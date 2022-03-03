@@ -1,0 +1,36 @@
+.admin_register {
+  display: flex;
+}
+.admin_register_container {
+  flex: 5;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(10, 10, 10, 0.2),
+      rgba(10, 10, 10, 0.2)
+    ),
+    url(../../images/photo2.png);
+  background-position: center;
+}
+.admin_form_container {
+  background-color: rgba(249, 249, 252, 0.329);
+  width: auto;
+  height: auto;
+  padding: 50px 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+.register_form label {
+  display: flex;
+  align-items: center;
+}
+.register_form label h3 {
+  margin-right: 10px;
+}

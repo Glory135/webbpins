@@ -1,0 +1,33 @@
+.admin_cats {
+  display: flex;
+}
+.admin_cats_container {
+  flex: 5;
+}
+.admin_cat_form_container {
+  margin-bottom: 50px;
+}
+.cat_header_container {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin_cat_form_ {
+  padding: 20px;
+}
+.addBtn {
+  margin-left: 50px;
+}
+
+.admin_cats_table_container {
+  height: 50vh;
+  width: 60vw;
+}
+
+@media (max-width: 450px) {
+  .admin_cats_table_container {
+    height: 50vh;
+    width: 80vw;
+  }
+}

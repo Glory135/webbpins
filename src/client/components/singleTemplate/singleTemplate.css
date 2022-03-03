@@ -1,0 +1,125 @@
+.single {
+  height: 67vh;
+  width: 45%;
+  margin: 20px 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  font-family: "josefin Sans", sans-serif;
+}
+.single_img_container {
+  width: 100%;
+  height: 70%;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+.single_browser {
+  height: 20px;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  position: sticky;
+}
+.single_circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.single_img {
+  width: 100%;
+  transition: all 20s ease;
+}
+
+.single_img_container:hover .single_img {
+  transform: translateY(-75%);
+}
+
+.single-down {
+  background-color: var(--dark);
+  width: 100%;
+  height: 30%;
+  border-radius: 0 0 10px 10px;
+}
+
+.single_detail {
+  height: 15%;
+  display: flex;
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(185, 181, 181);
+}
+
+.single_desc {
+  height: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.single_desc h2 {
+  font-weight: 300;
+}
+.single_btn_container {
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.single_btn_get {
+  background-color: var(--primary);
+  color: white;
+}
+.single_btn_get:hover {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  transition: 0.5s;
+}
+
+.single_btn_pre {
+  background-color: var(--secondary);
+  color: white;
+}
+.single_btn_pre:hover {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 850px) {
+  .single {
+    width: 80%;
+    height: 50vh;
+    margin: 40px 30px;
+  }
+  .single_detail {
+    font-size: 10px;
+  }
+  .single_desc h2 {
+    font-size: 20px;
+  }
+  .single-down {
+    height: 45%;
+    padding-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .single {
+    width: 90%;
+    height: 70vh;
+  }
+  .single_detail {
+    font-size: 10px;
+  }
+  .single_desc h2 {
+    font-size: 20px;
+  }
+}

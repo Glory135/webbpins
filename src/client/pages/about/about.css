@@ -1,0 +1,123 @@
+.about {
+  width: 100vw;
+  height: auto;
+}
+.about_top {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--dark);
+}
+
+.about_top h1 {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.about-showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+}
+
+.about-showcase-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
+}
+
+.about-showcase-one p {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 25px;
+  height: 40vh;
+  width: 40vw;
+}
+
+.about-btn {
+  margin-top: 20px;
+  background-color: var(--secondary);
+  color: white;
+}
+
+.about-btn:hover {
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  background-color: transparent;
+  transition: 0.5s;
+}
+
+.about-showcase-two {
+  height: 50vh;
+  width: 50vw;
+}
+.about-showcase-two img {
+  height: 40vh;
+  width: 40vw;
+}
+.about-showcase-two img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .about-showcase {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .about-showcase-one {
+    width: 50%;
+    height: auto;
+    padding: 30px;
+  }
+  .about-showcase-one p {
+    font-size: 17px;
+    line-height: 25px;
+    height: auto;
+    width: auto;
+  }
+  .about-showcase-two {
+    height: auto;
+    width: 50%;
+  }
+  .about-showcase-two img {
+    height: 50%;
+    width: 95%;
+  }
+}
+
+@media (max-width: 450px) {
+  .about-showcase {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .about-showcase-one {
+    width: auto;
+    height: auto;
+    padding: 30px;
+  }
+  .about-showcase-one p {
+    font-size: 17px;
+    line-height: 25px;
+    height: auto;
+    width: auto;
+  }
+  .about-showcase-two {
+    height: auto;
+    width: auto;
+  }
+  .about-showcase-two img {
+    height: 50vh;
+    width: 70vw;
+  }
+}

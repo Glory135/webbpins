@@ -1,0 +1,51 @@
+:root {
+  --primary: blue;
+  --secondary: #f44546;
+  --dark: #010101;
+  --lightPrimary: #d6e1ff;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+* {
+  margin: 0;
+  font-family: "josefin Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+.payBtn {
+  background-color: teal;
+}
+.payBtn:hover {
+  color: teal;
+  border: 1px solid teal;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Link {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .btn {
+    width: auto;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+}
+@media (max-width: 450px) {
+  .btn {
+    width: auto;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,48 @@
+.paginationBtn {
+  height: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationBtn li {
+  list-style: none;
+  color: var(--secondary);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+}
+
+.paginationBtn li:hover {
+  color: white;
+  background-color: var(--secondary);
+  transition: 0.5s;
+}
+
+.paginationActive {
+  color: white;
+  background-color: var(--secondary);
+  transition: 0.5s;
+}
+.paginationActive a {
+  color: white;
+}
+.paginationDisabled {
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+  background-color: white;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 450px) {
+  .paginationBtn {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .paginationBtn li {
+    margin: 5px;
+  }
+}

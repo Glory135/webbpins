@@ -1,0 +1,6 @@
+.pageNotFound {
+  display: flex;
+}
+.pageNotFound_container {
+  flex: 5;
+}
