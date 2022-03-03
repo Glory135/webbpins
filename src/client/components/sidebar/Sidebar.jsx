@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./sidebar.css";
-import img from "../../images/ceb3.jpg";
+// import img from "../../images/ceb3.jpg";
 
 function Sidebar({ cats }) {
   return (
