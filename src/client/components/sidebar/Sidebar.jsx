@@ -17,15 +17,16 @@ function Sidebar({ cats }) {
       <div className='sidebar_item'>
         <span className='sidebar_title'>CATEGORIES</span>
         <ul className='sidebar_list'>
-          {cats.map((cat) => {
-            return (
-              <Link key={cat._id} className='Link' to={`/?cat=${cat.name}`}>
-                <li key={cat._id} className='sidebar_list_item'>
-                  {cat.name}
-                </li>
-              </Link>
-            );
-          })}
+          {cats &&
+            cats.map((cat) => {
+              return (
+                <Link key={cat._id} className='Link' to={`/?cat=${cat.name}`}>
+                  <li key={cat._id} className='sidebar_list_item'>
+                    {cat.name}
+                  </li>
+                </Link>
+              );
+            })}
         </ul>
       </div>
 

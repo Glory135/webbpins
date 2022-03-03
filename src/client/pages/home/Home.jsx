@@ -17,7 +17,7 @@ function Home() {
     // getting all templates start
     const getTemp = async () => {
       const res = await axios.get(`/templates/${search}`);
-      setTemplates(res.data.reverse());
+      setTemplates(res.data);
     };
     getTemp();
     // getting all templates end
