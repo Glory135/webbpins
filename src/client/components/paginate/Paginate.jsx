@@ -9,13 +9,11 @@ function Paginate({ templates }) {
   const templatePerPage = 8;
   const pagesVisited = pageNumber * templatePerPage;
 
-  const Displaytemplate =
-    templates &&
-    templates
-      .slice(pagesVisited, pagesVisited + templatePerPage)
-      .map((temp) => {
-        return <SingleTemplate key={temp._id} temp={temp} />;
-      });
+  const Displaytemplate = templates
+    .slice(pagesVisited, pagesVisited + templatePerPage)
+    .map((temp) => {
+      return <SingleTemplate key={temp._id} temp={temp} />;
+    });
 
   const pageCount = Math.ceil(templates.length / templatePerPage);
   const pageChange = ({ selected }) => {
