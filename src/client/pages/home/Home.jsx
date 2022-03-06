@@ -16,7 +16,7 @@ function Home() {
   useEffect(() => {
     // getting all templates start
     const getTemp = async () => {
-      const res = await axios.get(`/templates/${search}`);
+      const res = await axios.get(`https://webbpins.herokuapp.com/api/templates/${search}`);
       console.log(res);
       setTemplates(res.data);
     };
@@ -25,7 +25,7 @@ function Home() {
 
     // getting all cats start
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get("https://webbpins.herokuapp.com/api/categories");
       console.log(res);
       setCats(res.data);
     };
