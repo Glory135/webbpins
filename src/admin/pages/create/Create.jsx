@@ -41,7 +41,9 @@ function Create({
   useEffect(() => {
     // getting cats for thr select field
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get(
+        "https://webbpins.herokuapp.com/api/categories"
+      );
       setCatOptions(res.data);
     };
     getCats();

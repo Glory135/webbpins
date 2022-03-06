@@ -23,7 +23,9 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
   useEffect(() => {
     // getting cats start
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get(
+        "https://webbpins.herokuapp.com/api/categories"
+      );
       setCats(res.data.reverse());
     };
     getCats();

@@ -24,7 +24,9 @@ function Dashboard({
   useEffect(() => {
     // getting all templates start
     const getTemp = async () => {
-      const res = await axios.get("/templates");
+      const res = await axios.get(
+        "https://webbpins.herokuapp.com/api/templates"
+      );
       setTemplates(res.data.reverse());
     };
     getTemp();

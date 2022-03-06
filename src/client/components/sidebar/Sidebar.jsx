@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 import "./sidebar.css";
-// import img from "../../images/ceb3.jpg";
+import img from "../../images/ceb3.jpg";
 
 function Sidebar({ cats }) {
   return (
     <div className='sidebar'>
-      {/* <div className='sidebar_item'>
+      <div className='sidebar_item'>
         <span className='sidebar_title'>About Me</span>
         <img src={img} className='sidebar_img' alt='' />
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque sed
           enim amet iste aliquam aut maiores dicta facilis molestias tempore.
         </p>
-      </div> */}
+      </div>
 
       <div className='sidebar_item'>
         <span className='sidebar_title'>CATEGORIES</span>

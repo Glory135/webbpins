@@ -15,10 +15,13 @@ function Login({ setAdmin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/admin/login", {
-        email: emailRef.current.value,
-        password: passwordRef.current.value,
-      });
+      const response = await axios.post(
+        "https://webbpins.herokuapp.com/api/admin/login",
+        {
+          email: emailRef.current.value,
+          password: passwordRef.current.value,
+        }
+      );
       const token = response.data.token;
       const admin = response.data.admin;
       setAdmin(admin);

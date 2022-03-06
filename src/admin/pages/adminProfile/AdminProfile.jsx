@@ -16,7 +16,7 @@ function AdminProfile({ admin, isAdmin, setIsAdmin, token, setToken }) {
   useEffect(() => {
     // getting all admins start
     const getAdmins = async () => {
-      const res = await axios.get("/admin");
+      const res = await axios.get("https://webbpins.herokuapp.com/api/admin");
       setAdmins(res.data);
     };
     getAdmins();
