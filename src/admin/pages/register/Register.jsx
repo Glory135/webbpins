@@ -62,9 +62,13 @@ function Register({ admin, isAdmin, setIsAdmin, token, setToken }) {
       password,
     };
     try {
-      await axios.post("/admin/register", newAdmin, {
-        headers: { authorization: `Bearer ${token}` },
-      });
+      await axios.post(
+        "https://webbpins.herokuapp.com/api/admin/register",
+        newAdmin,
+        {
+          headers: { authorization: `Bearer ${token}` },
+        }
+      );
       notifySuccess("Added Successfully!!!");
       navigate("/admin/profile");
     } catch (err) {

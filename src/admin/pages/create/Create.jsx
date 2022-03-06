@@ -141,9 +141,13 @@ function Create({
       }
     } else {
       try {
-        await axios.post("/templates/create", newTemplate, {
-          headers: { authorization: `Bearer ${token}` },
-        });
+        await axios.post(
+          "https://webbpins.herokuapp.com/api/templates/create",
+          newTemplate,
+          {
+            headers: { authorization: `Bearer ${token}` },
+          }
+        );
         notifySuccess("Created Successfully!!!");
         navigate("/admin/dashboard");
       } catch (err) {

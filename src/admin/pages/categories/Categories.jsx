@@ -94,9 +94,13 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
       }
     } else {
       try {
-        await axios.post("/categories", newCat, {
-          headers: { authorization: `Bearer ${token}` },
-        });
+        await axios.post(
+          "https://webbpins.herokuapp.com/api/categories",
+          newCat,
+          {
+            headers: { authorization: `Bearer ${token}` },
+          }
+        );
         setId(0);
         setName("");
         notifySuccess("Added Successfully");
@@ -109,9 +113,12 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/categories/${id}`, {
-        headers: { authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://webbpins.herokuapp.com/api/categories/${id}`,
+        {
+          headers: { authorization: `Bearer ${token}` },
+        }
+      );
       notifySuccess("Deleted Successfully!!!");
     } catch (err) {
       notifyError("Error!!!!");

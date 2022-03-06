@@ -39,6 +39,7 @@
 
 @media screen and (max-width: 450px) {
   .paginationBtn {
+    margin-top: 50px;
     width: 100%;
     flex-wrap: wrap;
   }
