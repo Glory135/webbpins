@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 function SingleTemplate({ temp }) {
   const [payFormOpen, setPayFormOpen] = useState(false);
-  const PF = "http://localhost:2000/uploads/";
+  const PF = "https://webbpins.herokuapp.com/api/uploads/";
 
   const notifyError = () => {
     toast.error("ERROR!!!", {
