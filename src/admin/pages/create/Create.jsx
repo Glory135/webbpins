@@ -20,7 +20,7 @@ function Create({
   setTemplateEditMode,
 }) {
   // img path
-  const PF = "https://webbpins.herokuapp.com/uploads/";
+  const PF = "http://localhost:2000/uploads/";
 
   const [id, setId] = useState(templateEditMode ? template.id : 0);
   const [name, setName] = useState(templateEditMode ? template.name : "");
@@ -103,7 +103,7 @@ function Create({
       data.append("file", file);
       newTemplate.image = fileName;
       try {
-        await axios.post("https://webbpins.herokuapp.com/upload", data);
+        await axios.post("http://localhost:2000/upload", data);
       } catch (err) {
         notifyError("Add template image!!");
         console.log(err);
@@ -116,7 +116,7 @@ function Create({
       data.append("file", tempFile);
       newTemplate.template_file = filename;
       try {
-        await axios.post("https://webbpins.herokuapp.com/upload", data);
+        await axios.post("http://localhost:2000/upload", data);
       } catch (err) {
         notifyError("Add template File!!");
         console.log(err);
