@@ -77,9 +77,13 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
     };
     if (editMode) {
       try {
-        await axios.put(`/categories/${_id}`, newCat, {
-          headers: { authorization: `Bearer ${token}` },
-        });
+        await axios.put(
+          `https://webbpins.herokuapp.com/api/categories/${_id}`,
+          newCat,
+          {
+            headers: { authorization: `Bearer ${token}` },
+          }
+        );
         setEditMode(false);
         setId(0);
         setName("");

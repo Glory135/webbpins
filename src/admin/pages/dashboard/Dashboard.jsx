@@ -77,7 +77,7 @@ function Dashboard({
   };
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/templates/${id}`, {
+      await axios.delete(`https://webbpins.herokuapp.com/api/templates/${id}`, {
         headers: { authorization: `Bearer ${token}` },
       });
       notifySuccess("Deleted Successfully!!!");

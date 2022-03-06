@@ -62,7 +62,7 @@ function AdminProfile({ admin, isAdmin, setIsAdmin, token, setToken }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/admin/${id}`, {
+      await axios.delete(`https://webbpins.herokuapp.com/api/admin/${id}`, {
         headers: { authorization: `Bearer ${token}` },
       });
       admin._id === id && navigate("/");
