@@ -17,6 +17,7 @@ function Home() {
     // getting all templates start
     const getTemp = async () => {
       const res = await axios.get(`/templates/${search}`);
+      console.log(res);
       setTemplates(res.data);
     };
     getTemp();
@@ -25,6 +26,7 @@ function Home() {
     // getting all cats start
     const getCats = async () => {
       const res = await axios.get("/categories");
+  console.log(res);
       setCats(res.data);
     };
     getCats();
