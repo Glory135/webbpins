@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 
 function SingleTemplate({ temp }) {
   const [payFormOpen, setPayFormOpen] = useState(false);
-  const PF = "https://webbpins.herokuapp.com/api/uploads/";
 
   const notifyError = () => {
     toast.error("ERROR!!!", {
@@ -21,7 +20,7 @@ function SingleTemplate({ temp }) {
       url: "/download",
       method: "POST",
       responseType: "blob",
-      data: { fileName: temp.template_file },
+      data: { url: temp.template_file },
     })
       .then((result) => {
         fileDownload(result.data, temp.name + ".zip");
@@ -55,7 +54,7 @@ function SingleTemplate({ temp }) {
               className='single_circle'
             ></div>
           </div>
-          <img src={PF + temp.image} className='single_img' alt='' />
+          <img src={temp.image} className='single_img' alt='' />
         </div>
 
         <div className='single-down'>

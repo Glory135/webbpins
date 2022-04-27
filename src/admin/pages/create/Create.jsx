@@ -19,19 +19,13 @@ function Create({
   templateEditMode,
   setTemplateEditMode,
 }) {
-  // img path
-  const PF = "https://webbpins.herokuapp.com/uploads/";
-
-  const [id, setId] = useState(templateEditMode ? template.id : 0);
   const [name, setName] = useState(templateEditMode ? template.name : "");
   const [price, setPrice] = useState(templateEditMode ? template.price : 0);
   const [link, setLink] = useState(templateEditMode ? template.link : "");
   const [cat, setCat] = useState(templateEditMode ? template.category : "");
-  const [file, setFile] = useState(
-    templateEditMode ? PF + template.image : null
-  );
+  const [file, setFile] = useState(templateEditMode ? template.image : "");
   const [tempFile, setTempFile] = useState(
-    templateEditMode ? PF + template.template_file : null
+    templateEditMode ? template.template_file : ""
   );
 
   const [catOptions, setCatOptions] = useState([]);
@@ -89,39 +83,15 @@ function Create({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const newTemplate = {
-      id,
       name,
       price,
       link,
       category: cat,
+      image: file,
+      template_file: tempFile,
     };
-    if (file) {
-      const data = new FormData();
-      const fileName = Date.now() + file.name;
-      data.append("name", fileName);
-      data.append("file", file);
-      newTemplate.image = fileName;
-      try {
-        await axios.post("https://webbpins.herokuapp.com/upload", data);
-      } catch (err) {
-        notifyError("Add template image!!");
-        console.log(err);
-      }
-    }
-    if (tempFile) {
-      const data = new FormData();
-      const filename = Date.now() + tempFile.name;
-      data.append("name", filename);
-      data.append("file", tempFile);
-      newTemplate.template_file = filename;
-      try {
-        await axios.post("https://webbpins.herokuapp.com/upload", data);
-      } catch (err) {
-        notifyError("Add template File!!");
-        console.log(err);
-      }
-    }
 
     if (templateEditMode) {
       try {
@@ -157,6 +127,14 @@ function Create({
     }
   };
 
+  const previewPic = (file, set) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      set(reader.result);
+    };
+  };
+
   return (
     <div className='admin_create'>
       <Sidebar />
@@ -166,19 +144,6 @@ function Create({
         </div>
         <div className='admin_create_form_container'>
           <form onSubmit={handleSubmit}>
-            <label>
-              ID:{" "}
-              <input
-                className='admin_create_input   number_input'
-                type='number'
-                required
-                placeholder='Template id.......'
-                value={id}
-                onChange={(e) => {
-                  setId(e.target.value);
-                }}
-              />
-            </label>
             <label>
               Name:
               <input
@@ -248,8 +213,8 @@ function Create({
                 id='img_upload'
                 style={{ display: "none" }}
                 onChange={(e) => {
-                  setFile(e.target.files[0]);
-                  console.log(e.target.files);
+                  const file = e.target.files[0];
+                  previewPic(file, setFile);
                 }}
               />
             </label>
@@ -257,16 +222,16 @@ function Create({
               <span className='addIconContainer'>
                 <Add className='addIcon' />
               </span>
-              <p>{tempFile ? tempFile.name : "Add Template zip file"} </p>
+              <p>{"Add Template zip file"} </p>
               <input
                 type='file'
-                required
+                // required
                 name='temp_file_upload'
                 id='temp_file_upload'
                 style={{ display: "none" }}
                 onChange={(e) => {
-                  setTempFile(e.target.files[0]);
-                  console.log(e.target.files);
+                  const file = e.target.files[0];
+                  previewPic(file, setTempFile);
                 }}
               />
             </label>
@@ -279,15 +244,7 @@ function Create({
 
           {file && (
             <div className='admin_create_img_container'>
-              <img
-                src={
-                  templateEditMode
-                    ? PF + template.image
-                    : URL.createObjectURL(file)
-                }
-                className='admin_create_img'
-                alt=''
-              />
+              <img src={file} className='admin_create_img' alt='' />
             </div>
           )}
         </div>

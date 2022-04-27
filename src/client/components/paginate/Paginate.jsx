@@ -10,6 +10,7 @@ function Paginate({ templates }) {
   const pagesVisited = pageNumber * templatePerPage;
 
   const Displaytemplate = templates
+    .reverse()
     .slice(pagesVisited, pagesVisited + templatePerPage)
     .map((temp) => {
       return <SingleTemplate key={temp._id} temp={temp} />;

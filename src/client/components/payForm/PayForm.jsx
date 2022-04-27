@@ -106,7 +106,7 @@ function PayForm({ setPayFormOpen, price, payFormOpen, onDownload }) {
             <Phone />
             <TextField
               id='phone'
-              type={Number}
+              type='number'
               label='Phone'
               size='small'
               style={{ width: "90%" }}
