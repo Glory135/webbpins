@@ -36,7 +36,7 @@ function Create({
     // getting cats for thr select field
     const getCats = async () => {
       const res = await axios.get(
-        "https://webbpins.herokuapp.com/api/categories"
+        "https://webpins.onrender.com/api/categories"
       );
       setCatOptions(res.data);
     };
@@ -96,7 +96,7 @@ function Create({
     if (templateEditMode) {
       try {
         await axios.put(
-          `https://webbpins.herokuapp.com/api/templates/${template._id}`,
+          `https://webpins.onrender.com/api/templates/${template._id}`,
           newTemplate,
           {
             headers: { authorization: `Bearer ${token}` },
@@ -112,7 +112,7 @@ function Create({
     } else {
       try {
         await axios.post(
-          "https://webbpins.herokuapp.com/api/templates/create",
+          "https://webpins.onrender.com/api/templates/create",
           newTemplate,
           {
             headers: { authorization: `Bearer ${token}` },

@@ -24,7 +24,7 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
     // getting cats start
     const getCats = async () => {
       const res = await axios.get(
-        "https://webbpins.herokuapp.com/api/categories"
+        "https://webpins.onrender.com/api/categories"
       );
       setCats(res.data.reverse());
     };
@@ -78,7 +78,7 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
     if (editMode) {
       try {
         await axios.put(
-          `https://webbpins.herokuapp.com/api/categories/${_id}`,
+          `https://webpins.onrender.com/api/categories/${_id}`,
           newCat,
           {
             headers: { authorization: `Bearer ${token}` },
@@ -95,7 +95,7 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
     } else {
       try {
         await axios.post(
-          "https://webbpins.herokuapp.com/api/categories",
+          "https://webpins.onrender.com/api/categories",
           newCat,
           {
             headers: { authorization: `Bearer ${token}` },
@@ -114,7 +114,7 @@ function Categories({ admin, isAdmin, setIsAdmin, token, setToken }) {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://webbpins.herokuapp.com/api/categories/${id}`,
+        `https://webpins.onrender.com/api/categories/${id}`,
         {
           headers: { authorization: `Bearer ${token}` },
         }

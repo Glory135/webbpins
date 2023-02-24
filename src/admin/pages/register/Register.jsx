@@ -63,7 +63,7 @@ function Register({ admin, isAdmin, setIsAdmin, token, setToken }) {
     };
     try {
       await axios.post(
-        "https://webbpins.herokuapp.com/api/admin/register",
+        "https://webpins.onrender.com/api/admin/register",
         newAdmin,
         {
           headers: { authorization: `Bearer ${token}` },

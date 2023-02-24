@@ -17,7 +17,7 @@ function Home() {
     // getting all templates start
     const getTemp = async () => {
       const res = await axios.get(
-        `https://webbpins.herokuapp.com/api/templates/${search}`
+        `https://webpins.onrender.com/api/templates/${search}`
       );
 
       setTemplates(res.data);
@@ -28,7 +28,7 @@ function Home() {
     // getting all cats start
     const getCats = async () => {
       const res = await axios.get(
-        "https://webbpins.herokuapp.com/api/categories"
+        "https://webpins.onrender.com/api/categories"
       );
 
       setCats(res.data);

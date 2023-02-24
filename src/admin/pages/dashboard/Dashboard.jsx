@@ -25,7 +25,7 @@ function Dashboard({
     // getting all templates start
     const getTemp = async () => {
       const res = await axios.get(
-        "https://webbpins.herokuapp.com/api/templates"
+        "https://webpins.onrender.com/api/templates"
       );
       setTemplates(res.data.reverse());
     };
@@ -77,7 +77,7 @@ function Dashboard({
   };
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://webbpins.herokuapp.com/api/templates/${id}`, {
+      await axios.delete(`https://webpins.onrender.com/api/templates/${id}`, {
         headers: { authorization: `Bearer ${token}` },
       });
       notifySuccess("Deleted Successfully!!!");

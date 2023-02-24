@@ -16,7 +16,7 @@ function AdminProfile({ admin, isAdmin, setIsAdmin, token, setToken }) {
   useEffect(() => {
     // getting all admins start
     const getAdmins = async () => {
-      const res = await axios.get("https://webbpins.herokuapp.com/api/admin");
+      const res = await axios.get("https://webpins.onrender.com/api/admin");
       setAdmins(res.data);
     };
     getAdmins();
@@ -62,7 +62,7 @@ function AdminProfile({ admin, isAdmin, setIsAdmin, token, setToken }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://webbpins.herokuapp.com/api/admin/${id}`, {
+      await axios.delete(`https://webpins.onrender.com/api/admin/${id}`, {
         headers: { authorization: `Bearer ${token}` },
       });
       admin._id === id && navigate("/");
